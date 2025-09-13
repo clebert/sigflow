@@ -17,7 +17,7 @@
   "name": "sigflow",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clebert/sigflow.git"
+    "url": "git+https://github.com/clebert/sigflow.git"
   },
   "scripts": {
     "check": "biome check",
