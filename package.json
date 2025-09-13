@@ -26,6 +26,7 @@
     "compile": "tsc",
     "compile:emit": "tsc --project tsconfig.emit.json",
     "postrelease": "git push --follow-tags",
+    "prepublishOnly": "npm run compile:emit",
     "release": "npm version",
     "start": "tsx example.js",
     "test": "c8 tsx --test 'src/**/*.test.ts'",
