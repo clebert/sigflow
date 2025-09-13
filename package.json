@@ -1,0 +1,36 @@
+{
+  "author": "Clemens Akens",
+  "description": "A strict, synchronous reactive system with explicit state management and atomic updates.",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@types/node": "^24.3.3",
+    "c8": "^10.1.3",
+    "npm-check-updates": "^18.1.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "exports": "./lib/signal.js",
+  "files": [
+    "lib/"
+  ],
+  "license": "MIT",
+  "name": "sigflow",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clebert/sigflow.git"
+  },
+  "scripts": {
+    "check": "biome check",
+    "check:fix": "biome check --fix",
+    "ci": "npm run check && npm run compile && npm run test",
+    "compile": "tsc",
+    "compile:emit": "tsc --project tsconfig.emit.json",
+    "postrelease": "git push --follow-tags",
+    "release": "npm version",
+    "start": "tsx example.js",
+    "test": "c8 tsx --test 'src/**/*.test.ts'",
+    "upgrade": "npm-check-updates --upgrade"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
