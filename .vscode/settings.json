@@ -11,6 +11,7 @@
   "editor.formatOnSave": true,
   "editor.rulers": [100],
   "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifierEnding": "js",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.tsdk": "node_modules/typescript/lib/"

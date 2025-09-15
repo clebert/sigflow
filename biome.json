@@ -45,10 +45,7 @@
         "noShadow": "error",
         "noUselessUndefined": "error",
         "useExhaustiveSwitchCases": "error",
-        "useSortedClasses": {
-          "level": "error",
-          "options": { "functions": ["tw"] }
-        }
+        "useSortedClasses": { "level": "error", "options": { "functions": ["tw"] } }
       },
       "performance": {
         "noBarrelFile": "error",

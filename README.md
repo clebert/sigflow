@@ -1,7 +1,8 @@
 # sigflow
 
-A strict, synchronous reactive system with explicit state management and atomic updates.
-Enforces clear boundaries between reactive domains while preventing common pitfalls through well-defined execution modes.
+A strict, synchronous reactive system with explicit state management and atomic updates. Enforces
+clear boundaries between reactive domains while preventing common pitfalls through well-defined
+execution modes.
 
 ```js
 import { Signal } from "sigflow";
@@ -13,11 +14,11 @@ const $discountCode = Signal.createSource("");
 
 // Derived computations
 const $subtotal = Signal.createComputation(() =>
-  $items.subscribe().reduce((sum, item) => sum + item.price * item.quantity, 0)
+  $items.subscribe().reduce((sum, item) => sum + item.price * item.quantity, 0),
 );
 
 const $discount = Signal.createComputation(() =>
-  $discountCode.subscribe() === "SAVE10" ? $subtotal.subscribe() * 0.1 : 0
+  $discountCode.subscribe() === "SAVE10" ? $subtotal.subscribe() * 0.1 : 0,
 );
 
 const $total = Signal.createComputation(() => {
@@ -50,11 +51,16 @@ Cart total: $34.48
 
 ## Core Concepts
 
-**Signals as Communication Lines**: Signals flow along isolated "lines" - independent reactive environments that maintain separate execution state. This enables clean separation between different reactive domains and prevents cross-contamination.
+**Signals as Communication Lines**: Signals flow along isolated "lines" - independent reactive
+environments that maintain separate execution state. This enables clean separation between different
+reactive domains and prevents cross-contamination.
 
-**Explicit State Management**: The system operates in distinct modes (batching, computing, tracking) with strict rules about what operations are allowed in each. This prevents race conditions and ensures predictable execution order.
+**Explicit State Management**: The system operates in distinct modes (batching, computing, tracking)
+with strict rules about what operations are allowed in each. This prevents race conditions and
+ensures predictable execution order.
 
-**Deferred Updates**: All signal changes are batched and applied atomically. Updates are deferred until batch completion, ensuring consistent state throughout the update cycle.
+**Deferred Updates**: All signal changes are batched and applied atomically. Updates are deferred
+until batch completion, ensuring consistent state throughout the update cycle.
 
 ## API Design
 
